@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from education.views import home, filter_courses, course
+from education.views import home, filter_courses, course, admin as a
+from accounts.views import login_view, registration_view
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -25,4 +26,7 @@ urlpatterns = [
     path('home/', home, name='home'),
     path('filter-courses/', filter_courses, name='filter_courses'),
     path('course/<int:pk>/', course, name='course'),
+    path('login/', login_view, name='login'),
+    path('register/', registration_view, name="register"),
+    path('adminpanel/', a, name="admin")
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

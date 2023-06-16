@@ -91,4 +91,5 @@ def course(request, pk):
     return render(request, "templates/base.html", context)
 
 
-
+def admin(request):
+    return render(request,"templates/admin.html")

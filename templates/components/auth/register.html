@@ -1,0 +1,20 @@
+<form action="{% url 'register'%}" method="post">
+    {% csrf_token %}
+    <input type="text" name="fname" placeholder="Имя">
+    <input type="text" name="lname" placeholder="Фамилия">
+    <div>
+        <label class="label__birthday" name="birth_date" for="birthday">День рождения:</label>
+        <input id="birthday" type="date">
+    </div>
+    
+    <input type="tel" name="phone_number" placeholder="Номер Телефона">
+    <input type="email" name="email" placeholder="Email">
+
+    <input class="password" name="password" type="password" placeholder="Пароль">
+    <button class="login-to-account" type="submit" name="register">Создать аккаунт</button>
+    
+    <div>
+        <p>У вас уже есть учетная запись?</p><p class="go-to-account">Войти</p>
+    </div>
+    
+</form>
