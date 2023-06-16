@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ozimiz</title>
+        <link rel="stylesheet" href="{% static 'src/style.css' %}">
+        <link rel="stylesheet" href="{% static 'src/second-page/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    {% include './components/navs/header.html' %}
+    {% block content %}
+    {% block banner %}
+        {% if request.path == '/home/' %}
+            {% include './components/home/banner.html' %}
+        {% elif '/course/' in request.path %}
+            {% include './components/course/banner.html' %}
+        {% endif %}
+    {% endblock banner%}
+        {% block main-content %}
+            {% if request.path == '/home/' %}
+                {% include './components/home/home-content.html' %}
+            {% elif '/course/' in request.path %}
+                {% include './components/course/resent-stream.html' %}
+            {% endif %}
+        {% endblock main-content %}
+    {% endblock content %}
+    {% include './components/navs/footer.html' %}
+
+</body>
+
+</html>

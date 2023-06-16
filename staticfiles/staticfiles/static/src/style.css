@@ -1,5 +1,6 @@
 @import './helpers/nullstyle.css';
 @import './helpers/fonts.css';
+@import './helpers/styles-for-js.css';
 .wrapper {
   display: flex;
   flex-direction: row;

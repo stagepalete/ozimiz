@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from education.views import view as index
+from education.views import home, filter_courses, course
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', index, name='home'),
+    path('home/', home, name='home'),
+    path('filter-courses/', filter_courses, name='filter_courses'),
+    path('course/<int:pk>/', course, name='course'),
 ]
+urlpatterns += staticfiles_urlpatterns()

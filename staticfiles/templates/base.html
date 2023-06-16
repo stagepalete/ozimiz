@@ -1,16 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Ozimiz</title>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'src/style.css' %}">
-    </head>
 
-    <body>
-        {% block content %}
-            {% block header %}
-                {% include './components/header.html' %}
-            {% endblock %}
-        {% endblock content %}
-    </body>
+<head>
+    <title>Ozimiz</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/src/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/src/second-page/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    {% include './components/navs/header.html' %}
+    {% block content %}
+    {% block banner %}
+    {% if request.path == '/home/' %}
+    {% include './components/home/banner.html' %}
+    
+    {% endif %}
+    {% endblock banner%}
+    {% block main-content %}
+    {% if request.path == '/home/' %}
+    {% include './components/home/home-content.html' %}
+    {% elif '/course/' in request.path %}
+    <section>
+        {% include './components/course/banner.html' %}
+        {% include './components/course/resent-stream.html' %}
+        {% include './components/course/learn.html' %}
+        {% include './components/course/countdown.html' %}
+        {% include './components/course/enrollment.html' %}
+    </section>
+    {% endif %}
+    {% endblock main-content %}
+    {% endblock content %}
+    {% include './components/navs/footer.html' %}
+
+</body>
+
 </html>

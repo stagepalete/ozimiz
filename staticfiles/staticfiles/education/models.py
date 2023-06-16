@@ -14,13 +14,33 @@ class Course(models.Model):
     result = models.TextField()
     duration_months = models.IntegerField()
     duration_lesson_minutes = models.IntegerField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.IntegerField()
+    discount = models.IntegerField(default=0)
     course_logo_16 = models.CharField(max_length=255)
     course_logo_32 = models.CharField(max_length=255)
     course_logo_48 = models.CharField(max_length=255)
     course_logo_100 = models.CharField(max_length=255)
     course_banner = models.CharField(max_length=255)
     additional_info = models.TextField()
+
+    def serialize_course(course):
+        serialized_course = {
+            'name': course.name,
+            'description': course.description,
+            'category_id': course.category_id.id,
+            'program': course.program.split(';'),
+            'result': course.result.split(';'),
+            'duration_months': course.duration_months,
+            'duration_lesson_minutes': course.duration_lesson_minutes,
+            'price': str(course.price - course.price * (course.discount/100)),
+            'course_logo_16': course.course_logo_16,
+            'course_logo_32': course.course_logo_32,
+            'course_logo_48': course.course_logo_48,
+            'course_logo_100': course.course_logo_100,
+            'course_banner': course.course_banner,
+            'additional_info': course.additional_info,
+        }
+        return serialized_course
 
     def __str__(self):
         return self.name

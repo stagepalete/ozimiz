@@ -1,5 +1,7 @@
 @import './helpers/nullstyle.css';
 @import './helpers/fonts.css';
+@import './helpers/styles-for-js.css';
+
 @mixin flex{
     display: flex;
     flex-direction: row;

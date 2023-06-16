@@ -1,0 +1,865 @@
+@import '../src/helpers/nullstyle.css';
+@import '../src/helpers/fonts.css';
+@import '../helpers/styles-for-js.css';
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+nav {
+  justify-content: space-around;
+  background-color: #88C6FE;
+  padding: 10px 0;
+}
+nav .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+nav .logo img {
+  width: 55px;
+  height: 55px;
+}
+nav .logo h2 {
+  margin-left: 15px;
+  font-family: "MuseoModerno";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 64px;
+  color: #3100F7;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 40px;
+}
+nav ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 30px;
+}
+nav ul li a {
+  color: #000000;
+}
+nav ul li svg {
+  align-items: center;
+}
+nav .btns button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 22px;
+  color: #191816;
+  background: #EFF0F5;
+  border-radius: 15px;
+  padding: 11px 28px;
+  transition: all 1s;
+  margin-left: 10px;
+}
+nav .btns button:hover {
+  background-color: #3100F7;
+  color: #EFF0F5;
+}
+
+section {
+  max-width: 1280px;
+  margin: 80px auto;
+}
+section .about-course {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background: linear-gradient(177.96deg, rgba(97, 180, 255, 0.97) -12.47%, rgba(49, 0, 247, 0.66) 61.34%);
+  border-radius: 32px;
+  padding-left: 30px;
+}
+section .about-course .about-course__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+section .about-course h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #FFFFFF;
+}
+section .about-course .description {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+section .about-course div button {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000000;
+  padding: 10px 28px;
+  background: #88C6FE;
+  border-radius: 16px;
+}
+section .about-course div .price {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  color: #FFFFFF;
+  background: #14173F;
+  border-radius: 16px;
+}
+section .recent-potok {
+  margin-top: 40px;
+}
+section .recent-potok h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 26px;
+  color: #141740;
+  text-align: center;
+  margin-bottom: 30px;
+}
+section .recent-potok .dates {
+  border: 2px solid #000000;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+}
+section .recent-potok .dates div {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+section .recent-potok .dates div h3 {
+  padding-top: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FF0000;
+  text-align: center;
+}
+section .recent-potok .dates div p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000000;
+  text-align: center;
+  padding-bottom: 20px;
+}
+section .recent-potok .dates .places-of-people p {
+  color: red;
+}
+section .recent-potok .dates .end-date {
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+  padding: 0 150px;
+  height: 70px;
+}
+section .recent-potok .dates .end-date h3 {
+  padding-top: 0;
+}
+section .you-will-learn {
+  margin-top: 70px;
+  padding-top: 30px;
+  background: linear-gradient(319.77deg, rgba(49, 0, 247, 0.64) 34.55%, rgba(128, 112, 253, 0.804324) 49.12%, rgba(147, 139, 255, 0.843564) 52.6%, rgba(143, 162, 255, 0.62) 66.47%);
+  border-radius: 32px;
+}
+section .you-will-learn h2 {
+  text-align: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 26px;
+  color: #000000;
+  padding-bottom: 30px;
+}
+section .you-will-learn .stacks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding: 0 30px;
+  margin-bottom: 50px;
+  gap: 15px;
+}
+section .you-will-learn .stacks span {
+  border: 1.8px solid #000000;
+  border-radius: 66px;
+  padding: 5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000000;
+}
+section .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+section .accordion {
+  background-color: #fff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 60%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  color: #000000;
+}
+section .accordion p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+}
+section .active, section .accordion:hover {
+  background-color: #ccc;
+}
+section .panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  width: 60%;
+}
+
+.countdown h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 50px;
+  color: #000000;
+  text-align: center;
+}
+.countdown h3 {
+  text-align: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 26px;
+  margin-top: 40px;
+  color: #000000;
+}
+
+.enroll {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(251.43deg, #88C6FE 21.49%, #5254FF 90.05%);
+  border-radius: 20px;
+  margin-top: 100px;
+}
+.enroll h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 26px;
+  padding-top: 55px;
+  color: #14173F;
+  padding-bottom: 40px;
+}
+.enroll h3 {
+  position: relative;
+  left: 250px;
+  padding-bottom: 15px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  color: #000000;
+}
+.enroll form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.enroll form .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.enroll form .info input {
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 500px;
+  padding: 15px 5px;
+}
+.enroll form .streams {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 23px;
+  width: 500px;
+}
+.enroll form .streams .info-about-streams ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 30px;
+  border-bottom: 1px solid #000;
+  padding: 10px 0;
+}
+.enroll form .streams label ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  gap: 0;
+  padding: 10px 30px;
+}
+.enroll form .streams label ul li {
+  text-align: center;
+}
+.enroll form button {
+  grid-area: 2/1/3/3;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 52px;
+  background: #14173F;
+  border-radius: 15px;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+footer {
+  background: #5E61FF;
+  margin-top: 70px;
+  padding: 100px 0;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+  color: #000000;
+}
+footer .logo__footer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+footer .logo__footer img {
+  display: inline;
+  vertical-align: middle;
+}
+footer .logo__footer h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+  display: inline;
+}
+footer .links-to-soc {
+  display: flex;
+  margin-top: 20px;
+  gap: 15px;
+}
+footer div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+footer div ul li a {
+  color: #000000;
+  font-size: 16px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  transition: all 1s;
+}
+footer div ul li a:hover {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.974);
+}
+
+.modal-login {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.login__container {
+  background: #E9F0FF;
+  border-radius: 15px;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.login__container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.login__container form input {
+  border: 2px solid #1E2E4E;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 400px;
+}
+.login__container form .forgot-password {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding: 0;
+  background: #E9F0FF;
+  transition: color 1s;
+  position: relative;
+  bottom: 25px;
+  left: 135px;
+}
+.login__container form .forgot-password:hover {
+  background: #E9F0FF;
+  color: #676767;
+  cursor: pointer;
+}
+.login__container form .login-to-account {
+  background: #5254FF;
+  width: 400px;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.login__container p {
+  display: inline;
+}
+.login__container .create-account {
+  display: inline;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 22px;
+  color: #191816;
+  background: #EFF0F5;
+  border-radius: 15px;
+  padding: 0;
+  transition: none;
+}
+.login__container .create-account:hover {
+  background: #E9F0FF;
+  color: #676767;
+}
+.login__container h2 {
+  padding-top: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 49px;
+  color: #5254FF;
+  text-align: center;
+}
+
+.modal-signin {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.signin__container {
+  background: #E9F0FF;
+  border-radius: 15px;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.signin__container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.signin__container form label {
+  display: block;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+.signin__container form input {
+  border: 2px solid #5254FF;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 400px;
+}
+.signin__container form .forgot-password {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding: 0;
+  background: #E9F0FF;
+  transition: color 1s;
+  position: relative;
+  bottom: 25px;
+  left: 135px;
+}
+.signin__container form .forgot-password:hover {
+  background: #E9F0FF;
+  color: #676767;
+}
+.signin__container form .login-to-account {
+  background: #5254FF;
+  width: 400px;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+}
+.signin__container form .go-to-account {
+  display: inline;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 22px;
+  color: #191816;
+  background: #EFF0F5;
+  border-radius: 15px;
+  padding: 0;
+  transition: none;
+}
+.signin__container form .go-to-account:hover {
+  background: #E9F0FF;
+  color: #676767;
+  cursor: pointer;
+}
+.signin__container form p {
+  display: inline;
+}
+.signin__container h2 {
+  padding-top: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 49px;
+  color: #5254FF;
+  text-align: center;
+  background: #E9F0FF;
+}
+
+.modal-sended-email {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.sended-email-container {
+  background: #E9F0FF;
+  border-radius: 15px;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.sended-email-container img {
+  padding-top: 20px;
+}
+.sended-email-container h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+.sended-email-container p {
+  text-align: center;
+}
+.sended-email-container button {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #5254FF;
+  padding: 15px 0;
+  border-radius: 10px;
+  width: 480px;
+}
+.sended-email-container div button {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  color: #5254FF;
+  background: #E9F0FF;
+  padding: 0;
+  border-radius: 0;
+  width: auto;
+}
+
+.modal-trouble-account {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.trouble-account-container {
+  background: #E9F0FF;
+  border-radius: 15px;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.trouble-account-container img {
+  padding-top: 20px;
+}
+.trouble-account-container h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+.trouble-account-container p {
+  text-align: center;
+}
+.trouble-account-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.trouble-account-container form input {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  width: 480px;
+  padding: 15px 0;
+  margin-bottom: 30px;
+}
+.trouble-account-container form :-ms-input-placeholder {
+  text-align: center;
+}
+.trouble-account-container form ::-webkit-input-placeholder {
+  text-align: center;
+}
+.trouble-account-container form ::-webkit-inner-spin-button {
+  text-align: center;
+}
+.trouble-account-container form button {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #5254FF;
+  padding: 15px 0;
+  border-radius: 10px;
+  width: 480px;
+}
+.trouble-account-container div p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  color: #5254FF;
+  background: #E9F0FF;
+  padding: 0;
+  border-radius: 0;
+  width: auto;
+  cursor: pointer;
+}
+
+.modal-enroll {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content-enroll {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  background: #E9F0FF;
+  border-radius: 15px;
+  width: 450px;
+}
+.content-enroll h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 36px;
+  color: #000000;
+}
+.content-enroll div {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+}
+.content-enroll button {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 29px;
+  text-align: center;
+  background-color: #5254FF;
+  width: 300px;
+  padding: 13px 0;
+  border-radius: 10px;
+  color: #FFFFFF;
+}/*# sourceMappingURL=style.css.map */
