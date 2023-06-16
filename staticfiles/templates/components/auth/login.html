@@ -1,0 +1,10 @@
+<form action="{% url 'login'%}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Имя пользователя" required>
+
+    <input class="password" name="password" type="password" placeholder="Пароль" required>
+
+    
+    <p id="forgot-password" class="forgot-password">Забыли пароль?</p>
+    <button class="login-to-account">Войти</button>
+</form>

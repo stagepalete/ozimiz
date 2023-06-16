@@ -5,6 +5,7 @@ from urllib.parse import unquote
 from .models import *
 from django.core.paginator import Paginator, EmptyPage
 from django.template.context import RequestContext
+from django.utils import timezone
 # Create your views here.
 
 
@@ -81,8 +82,14 @@ def filter_courses(request):
 
 def course(request, pk):
     course = Course.objects.get(pk=pk)
-    context = {"Course": course, RequestContext: request}
+    current_date = timezone.now().date()
+    nearest_stream = course.course_stream_set.filter(start_date__gte=current_date).order_by('start_date').first()
+    other_streams = course.course_stream_set.filter(start_date__gte=current_date).order_by('-start_date')
+    course = course.serialize_course()
+    print(other_streams)
+    context = {"Course": course, "nearest_stream": nearest_stream, "other_streams": other_streams}
     return render(request, "templates/base.html", context)
 
 
-
+def admin(request):
+    return render(request,"templates/admin.html")

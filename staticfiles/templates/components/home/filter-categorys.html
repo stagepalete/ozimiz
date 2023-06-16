@@ -1,5 +1,5 @@
-<button class="filter-option" type="submit" data-option="">Все курсы</button>
+<button class="filter-option filterBtns filter__btn-active" type="submit" data-option="">Все курсы</button>
 {% for i in Categories%}
 
-<button class="filter-option" type="submit" name="filter_option" data-option="{{i.category_title}}">{{i.category_title}}</button>
+<button class="filter-option filterBtns" type="submit" name="filter_option" data-option="{{i.category_title}}">{{i.category_title}}</button>
 {%endfor%}

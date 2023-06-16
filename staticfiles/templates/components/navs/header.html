@@ -1,8 +1,7 @@
-{% load static%}
 <nav>
     <div class="wrapper">
         <a class="logo" href="#">
-            <img src="{% static 'images/logo.png' %}" alt="">
+            <img src="./images/logo.png" alt="">
             <h2>Ozimiz.kz</h2>
         </a>
 
@@ -15,8 +14,30 @@
             <li><a href="#"><!--link-->О нас</a></li>
         </ul>
         <div class="btns">
-            <button>Войти</button>
-            <button>Регистрация</button>
+            {% if user.is_authenticated %}
+            <button>{{ user.first_name }}</button>
+            {% else %}
+            <button id="login">Войти</button>
+            <button id="signin">Регистрация</button>
+            {% endif %}
+
+            <div class="modal-login">
+                <div class="login__container">
+                    <h2>С возвращением!</h2>
+                    {% include '../auth/login.html'%}
+                    <div>
+                        <p>Еще не зарегистрировались?</p><button id="create-account" class="create-account">Cоздать
+                            аккаунт</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-signin">
+                <div class="signin__container">
+                    <h2>РЕГИСТРАЦИЯ</h2>
+                    {% include '../auth/register.html' %}
+                </div>
+            </div>
         </div>
+
     </div>
 </nav>

@@ -37,56 +37,43 @@
                 <li><a href="#">Политика обработки персональных данных</a></li>
             </ul>
         </div>
-    </div>
-    <div class="js-containers">
-        <div class="modal-confirm-account">
-            <div class="confirm__container">
-                <img src="{% static 'images/confirm-email.svg' %}" alt="">
-                <h3>Подтвердите свой адрес электронной почты</h3>
-                <p>Мы отправили электронное письмо со ссылкой для подтверждения и дальнейшей регистрациив нашем сервисе</p>
-                
-                <button>Ok</button>
-                
-                <div>
-                    <span>Письмо не пришло?</span>
-                    <button>Отправить еще раз</button>
+        <div class="js-containers">
+            <div class="modal-sended-email">
+                <div class="sended-email-container">
+                    <img src="./images/confirm-email.svg" alt="">
+                    <h3>Отправлено электронное письмо</h3>
+                    <p>Мы отправили электронное письмо со ссылкой для возврата в свой аккаунт.</p>
+                    
+                    <button>Ok</button>
+                    
+                    <div>
+                        <span>Письмо не пришло?</span>
+                        <button>Отправить еще раз</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="modal-sended-email">
-            <div class="sended-email-container">
-                <img src="{% static 'images/confirm-email.svg' %}" alt="">
-                <h3>Отправлено электронное письмо</h3>
-                <p>Мы отправили электронное письмо со ссылкой для возврата в свой аккаунт.</p>
-                
-                <button>Ok</button>
-                
-                <div>
-                    <span>Письмо не пришло?</span>
-                    <button>Отправить еще раз</button>
-                </div>
-            </div>
-        </div>
 
-        <div class="modal-trouble-account">
-            <div class="trouble-account-container">
-                <img src="{% static 'images/trouble-email.svg' %}" alt="">
-                <h3>Trouble with logging in?</h3>
-                <p>Enter your email address or phone number, and we'll send you a link to get back into your account.</p>
-                
-                <form action="#" method="post">
-                    <input type="email" placeholder="Email address or phone number">
+            <div class="modal-trouble-account">
+                <div class="trouble-account-container">
+                    <img src="./images/trouble-email.svg" alt="">
+                    <h3>Trouble with logging in?</h3>
+                    <p>Enter your email address or phone number, and we'll send you a link to get back into your account.</p>
+                    
+                    <form action="#" method="post">
+                        <input type="email" placeholder="Email address or phone number">
 
-                    <button id="send-login-link">Send Login Link</button>
-                </form>
+                        <button id="send-login-link" onclick="handleModalSendedEmail()">Send Login Link</button>
+                    </form>
 
-                
-                <div>
-                    <span>Remembered password?</span>
-                    <p id="backToLogin">Back to login</p>
+                    
+                    <div>
+                        <span>Remembered password?</span>
+                        <p id="backToLogin">Back to login</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
 </footer>
-<!-- <script src="{%static 'src/index.js'%}"></script> -->
+<!--  -->
