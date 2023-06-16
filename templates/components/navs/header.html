@@ -1,22 +1,62 @@
-{% load static%}
 <nav>
     <div class="wrapper">
         <a class="logo" href="#">
-            <img src="{% static 'images/logo.png' %}" alt="">
+            <img src="./images/logo.png" alt="">
             <h2>Ozimiz.kz</h2>
         </a>
-
+        
         <ul class="links">
-            <li>Программы <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2.5" d="m7 10l5 5m0 0l5-5" />
-                </svg></li>
+            <li>Программы <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7 10l5 5m0 0l5-5"/></svg></li>
             <li><a href="#"><!--link-->Отзывы</a></li>
             <li><a href="#"><!--link-->О нас</a></li>
         </ul>
         <div class="btns">
-            <button>Войти</button>
-            <button>Регистрация</button>
+            <button id="login">Войти</button>
+            <button id="signin">Регистрация</button>
+            <div class="modal-login">
+                <div class="login__container">
+                    <h2>С возвращением!</h2>
+                    <form action="#" method="post">
+                        <input type="email" placeholder="Эллектронная почта">
+
+                        <input class="password" type="password" placeholder="Пароль">
+
+                        
+                        <p id="forgot-password" class="forgot-password">Забыли пароль?</p>
+                        <button class="login-to-account">Войти</button>
+                        
+                        
+                    </form>
+                    <div>
+                        <p>Еще не зарегистрировались?</p><button id="create-account" class="create-account">Cоздать аккаунт</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-signin">
+                <div class="signin__container">
+                    <h2>РЕГИСТРАЦИЯ</h2>
+                    <form action="#" method="post">
+                        <input type="text" placeholder="Имя">
+                        <input type="text" placeholder="Фамилия">
+                        <div>
+                            <label class="label__birthday" for="birthday">День рождения:</label>
+                            <input id="birthday" type="date">
+                        </div>
+                        
+                        <input type="tel" placeholder="Номер Телефона">
+                        <input type="email" placeholder="Email">
+
+                        <input class="password" type="password" placeholder="Пароль">
+                        <button class="login-to-account">Создать аккаунт</button>
+                        
+                        <div>
+                            <p>У вас уже есть учетная запись?</p><p class="go-to-account">Войти</p>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
         </div>
+        
     </div>
 </nav>

@@ -7,6 +7,10 @@
     <link rel="stylesheet" type="text/css" href="{% static '/src/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'src/second-page/style.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+       
+
+    </script>
 </head>
 
 <body>
@@ -14,13 +18,16 @@
     {% block content %}
     {% block banner %}
     {% if request.path == '/home/' %}
+    <section>
     {% include './components/home/banner.html' %}
-    
+</section>
     {% endif %}
     {% endblock banner%}
     {% block main-content %}
     {% if request.path == '/home/' %}
-    {% include './components/home/home-content.html' %}
+    <section>
+        {% include './components/home/home-content.html' %}
+    </section>
     {% elif '/course/' in request.path %}
     <section>
         {% include './components/course/banner.html' %}
@@ -34,8 +41,8 @@
     {% endblock content %}
     {% include './components/navs/footer.html' %}
 
-    <script src="{%static 'src/index.js'%}"></script>
-    <script src="{% static 'src/second-page/index.js'%}"></script>
+    <!-- <script src="{%static '/src/index.js'%}"></script> -->
+    <script src="{% static '/src/second-page/index.js'%}"></script>
 </body>
 
 </html>
