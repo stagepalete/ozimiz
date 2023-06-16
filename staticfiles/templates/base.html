@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ozimiz</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'src/style.css' %}">
+    </head>
+
+    <body>
+        {% block content %}
+            {% block header %}
+                {% include './components/header.html' %}
+            {% endblock %}
+        {% endblock content %}
+    </body>
+</html>

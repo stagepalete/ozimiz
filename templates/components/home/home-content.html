@@ -1,0 +1,136 @@
+{% load static %}
+<section>
+    <h2>Программа обучения для каждого</h2>
+
+    <div class="filter">
+        {% block filter-categories%}
+        {% include './filter-categorys.html' %}
+        {%endblock%}
+    </div>
+    <div class="search__wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5q0-2.725 1.888-4.612T9.5 3q2.725 0 4.612 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3l-1.4 1.4ZM9.5 14q1.875 0 3.188-1.313T14 9.5q0-1.875-1.313-3.188T9.5 5Q7.625 5 6.312 6.313T5 9.5q0 1.875 1.313 3.188T9.5 14Z" />
+        </svg>
+        <input placeholder="Искать" type="text" class="search">
+    </div>
+    <div class="filter__arrows">
+        <button class="filter_prev_arrow" type="submit" data-arrow="prev" {% if current_page.has_previous %}data-currentPage="{{ current_page.previous_page_number }}" {% else %}disabled {% endif %}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9">
+                <path fill="currentColor" d="M12.5 5h-9c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h9c.28 0 .5.22.5.5s-.22.5-.5.5Z" />
+                <path fill="currentColor" d="M6 8.5a.47.47 0 0 1-.35-.15l-3.5-3.5c-.2-.2-.2-.51 0-.71L5.65.65c.2-.2.51-.2.71 0c.2.2.2.51 0 .71L3.21 4.51l3.15 3.15c.2.2.2.51 0 .71c-.1.1-.23.15-.35.15Z" />
+            </svg>
+        </button>
+        
+        <button class="filter_next_arrow" type="submit" data-arrow="next" {% if current_page.has_next %}data-currentPage="{{ current_page.next_page_number }}" {% else %}disabled {% endif %}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9">
+                <path fill="currentColor" d="M12.5 5h-9c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h9c.28 0 .5.22.5.5s-.22.5-.5.5Z" />
+                <path fill="currentColor" d="M10 8.5a.47.47 0 0 1-.35-.15c-.2-.2-.2-.51 0-.71l3.15-3.15l-3.15-3.15c-.2-.2-.2-.51 0-.71c.2-.2.51-.2.71 0l3.5 3.5c.2.2.2.51 0 .71l-3.5 3.5c-.1.1-.23.15-.35.15Z" />
+            </svg>
+        </button>
+        
+        
+
+
+    </div>
+
+    <div class="courses">
+        {% block courses %}
+        {% include './course-cards.html' %}
+        {%endblock%}
+    </div>
+
+    <div class="reviews">
+        <h2>Отзывы о программах обучения</h2>
+        <div class="parent">
+            <div class="div div1"> </div>
+            <div class="div div2"></div>
+            <div class="div div3"></div>
+            <div class="div div4"></div>
+            <div class="div div5"></div>
+            <div class="div div6"></div>
+            <div class="div div7"></div>
+            <div class="div div8"></div>
+
+            <div class="btns__reviews">
+                <button class="first-slide"></button>
+                <button class="second-slide"></button>
+                <button class="third-slide"></button>
+                <button class="fourth-slide"></button>
+            </div>
+        </div>
+        <img src="{% static 'images/like.png' %}" alt="">
+    </div>
+
+    <div class="consultation">
+        <h2>Получить бесплатную консультацию</h2>
+        <form action="#" method="post">
+            <input placeholder="Имя" type="text">
+            <input placeholder="+7" type="tel">
+            <input placeholder="Эл. адрес" type="email">
+            <button>Отправить</button>
+
+            <div><input required type="checkbox" id="agree"><label for="agree">Даю своё согласие на обработку указанных
+                    мною персональных данных на условиях
+                    <a href="#">Политики конфиденциальности</a> в целях обработки заявки и обратной связи по
+                    ней.</label></div>
+
+        </form>
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+    var option = ''; // Initialize option variable
+    var currentPage = 1; // Initialize current page variable
+    var totalPages = 1; // Initialize total pages variable
+
+    $('.filter-option').click(function () {
+        var clickedOption = $(this).data('option'); // Get the clicked button's data-option value
+
+        // Reset current page to 1 if the option has changed
+        if (option !== clickedOption) {
+            currentPage = 1;
+        }
+
+        option = clickedOption; // Update option variable with the clicked value
+
+        loadCourses();
+    });
+
+    $('.filter_prev_arrow').click(function () {
+        if (currentPage > 1) {
+            currentPage--; // Decrease current page by 1
+            loadCourses();
+        }
+    });
+
+    $('.filter_next_arrow').click(function () {
+        if (currentPage < totalPages) {
+            currentPage++; // Increase current page by 1
+            loadCourses();
+        }
+    });
+
+    function loadCourses() {
+        $.ajax({
+            url: '{% url "filter_courses" %}',
+            type: 'GET',
+            data: { option: option, currentPage: currentPage },
+            success: function (response) {
+                $('.courses').html(response);
+
+                // Update total pages based on the data attribute in the response
+                totalPages = $('.courses').data('totalPages');
+
+                // Enable or disable previous/next buttons based on the current page
+                $('.filter_prev_arrow').prop('disabled', currentPage === 1);
+                $('.filter_next_arrow').prop('disabled', currentPage === totalPages);
+            },
+            error: function (xhr, status, error) {
+                console.log(error);
+            }
+        });
+    }
+});
+
+</script>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ozimiz</title>
+        <link rel="stylesheet" href="{% static 'src/style.css' %}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+
+    <body>
+        {% block content %}
+            
+            {% block header %}
+                {% include './components/navs/header.html' %}
+            {% endblock %}
+            {%block banner%}
+                {% include './components/home/banner.html' %}
+            {%endblock%}
+            {% block home-content%}
+                {% include './components/home/home-content.html' %}
+            {% endblock %}
+            {% block footer%}
+                {% include './components/navs/footer.html' %}
+            {% endblock %}
+        {% endblock content %}
+    </body>
+</html>
