@@ -3,7 +3,8 @@ from django.http import Http404, HttpResponseBadRequest
 from django.shortcuts import render, get_object_or_404
 from urllib.parse import unquote
 from .models import *
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator, EmptyPage
+from django.template.context import RequestContext
 # Create your views here.
 
 
@@ -80,7 +81,8 @@ def filter_courses(request):
 
 def course(request, pk):
     course = Course.objects.get(pk=pk)
-    context = {"Course": course}
+    context = {"Course": course, RequestContext: request}
     return render(request, "templates/base.html", context)
+
 
 

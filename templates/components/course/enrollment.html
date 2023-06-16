@@ -21,60 +21,17 @@
                     <li>выбор</li>
                 </ul>
             </div>
+            {% for i in other_streams%}
             <label for="first-stream">
                 <ul>
                     <li>1</li>
-                    <li>20.06.2023</li>
-                    <li>20.08.2023</li>
-                    <li>5</li>
+                    <li>{{i.start_date}}</li>
+                    <li>{{i.end_date}}</li>
+                    <li>{{i.max_capacity}}</li>
                     <li><input type="radio" name="streams" id="first-stream"></li>
                 </ul>
             </label>
-            <label for="second-stream">
-                <ul>
-                    <li>2</li>
-                    <li>30.06.2023</li>
-                    <li>30.08.2023</li>
-                    <li>15</li>
-                    <li><input type="radio" name="streams" id="second-stream"></li>
-                </ul>
-            </label>
-            <label for="thirth-stream">
-                <ul>
-                    <li>3</li>
-                    <li>10.07.2023</li>
-                    <li>10.09.2023</li>
-                    <li>17</li>
-                    <li><input type="radio" name="streams" id="thirth-stream"></li>
-                </ul>
-            </label>
-            <label for="fourth-stream">
-                <ul>
-                    <li>4</li>
-                    <li>20.07.2023</li>
-                    <li>20.09.2023</li>
-                    <li>20</li>
-                    <li><input type="radio" name="streams" id="fourth-stream"></li>
-                </ul>
-            </label>
-            <label for="fifth-stream">
-                <ul>
-                    <li>5</li>
-                    <li>30.07.2023</li>
-                    <li>30.09.2023</li>
-                    <li>25</li>
-                    <li><input type="radio" name="streams" id="fifth-stream"></li>
-                </ul>
-            </label>
-            <label for="sixth-stream">
-                <ul>
-                    <li>6</li>
-                    <li>10.08.2023</li>
-                    <li>10.10.2023</li>
-                    <li>25</li>
-                    <li><input type="radio" name="streams" id="sixth-stream"></li>
-                </ul>
-            </label>
+            {%endfor%}
         </div>
         <button id="sendBtn">Отправить</button>
     </form>
